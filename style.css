@@ -1,0 +1,93 @@
+body, #root {
+    display: flex;
+    background: #18181a;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    height: 100vh;
+    justify-content: center;
+}
+
+#root {
+    background: #2d2c33;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(255, 255, 255, 0.308) 0 2px 7px;
+    height: 90%;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+li, span, h1, label {
+    color: rgb(252, 247, 211);
+}
+
+.small, label {
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+button {
+    background: rgb(252, 247, 211);
+    border: none;
+}
+
+textarea {
+    background: #43434b;
+    width: 40vw;
+    height: 30vh;
+    box-shadow: white 0 5px 10px;
+    border-radius: 5px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    white-space: nowrap;
+    color: white;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#out_container {
+    position: relative;
+}
+
+img {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+img:hover {
+    filter: brightness(0.6);
+}
+
+#desc {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+#desc::after {
+    color: gray;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#acc:hover + #desc::after {
+    content: "Prioritise colours most closely matching the real ones"
+}
+
+#con:hover + #a + #acc + #desc::after {
+    content: "Prioritise unique colours"
+}

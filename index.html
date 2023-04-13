@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="root">
+            <h1>Use VSCode Text Highlighting in Discord!</h1>
+            <span>But how?</span>
+            <ol>
+                <li>Copy your desired text from VSCode</li>
+                <li>Hit the button!</li>
+                <li>Hit copy, and paste into Discord!</li>
+            </ol>
+
+            <button id="convert">Convert</button>
+            <br>
+            <span>Output:</span>
+            <div id="out_container">
+                <img src="copy.svg" id="copy">
+                <textarea id="output"></textarea>
+            </div>
+            <br>
+            <span>Options:</span>
+            <div>
+                <span class="small">Optimise for:</span>
+                <input type="radio" value="contrast" id="c" name="mode" checked="true"><label id="con" for="c">Contrast</label>
+                <input type="radio" value="accuracy" id="a" name="mode"><label id="acc" for="a">Accuracy</label>
+                <span id="desc"></span>
+            </div>
+        </div>
+    </body>
+</html>
