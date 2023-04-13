@@ -1,5 +1,6 @@
-document.querySelector("#convert").addEventListener("click", convert)
+// document.querySelector("#convert").addEventListener("click", convert)
 document.querySelector("#copy").addEventListener("click", copyContent)
+document.querySelector("#output").addEventListener("paste", (e) => {convert(e)})
 
 const parser = new DOMParser()
 
@@ -29,20 +30,22 @@ function getClosestColour(cssString, coloursToUse) {
     return Object.keys(colourDiffs).find(key => colourDiffs[key] === Math.min(...Object.values(colourDiffs)));
 }
 
-async function convert() {
+async function convert(e) {
+    e.preventDefault();
     let processedColours = {};
 
     let doc;
-    await navigator.clipboard.read().then(async (data) => {
-        await data[0].getType("text/html").then(async (d) => {
-            await d.text().then((ata) => {
-                doc = parser.parseFromString(ata, "text/html")
-            })
-        })
-    })
+    // await navigator.clipboard.read().then(async (data) => {
+    //     await data[0].getType("text/html").then(async (d) => {
+    //         await d.text().then((ata) => {
+    //             doc = parser.parseFromString(ata, "text/html")
+    //         })
+    //     })
+    // })
 
     let output = "";
 
+    doc = parser.parseFromString(e.clipboardData.getData("text/html"), "text/html");
     doc = doc.body.children[0];
 
     const mode = document.querySelector('input[name="mode"]:checked').value;
